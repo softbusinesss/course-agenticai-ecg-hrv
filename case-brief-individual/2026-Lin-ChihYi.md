@@ -1,6 +1,6 @@
 ## Case Brief: Automated Multi-Patient ECG Assessment for Personalized HRV Monitoring
 
-Author: LIN,CHIH-YI
+Author: Lin,Chih-Yi
 
 License: CC-BY-4.0
 ## Problem Statement
@@ -70,7 +70,9 @@ An AI agent system could:
 - Automatic filtering of low-quality signals to minimize false anomalies.
 
 - Scalable architecture that naturally extends from 1 to many users.
+
 ## References
+
 1.Task Force of the European Society of Cardiology and the North American Society of Pacing and Electrophysiology.Heart rate variability: standards of measurement, physiological interpretation and clinical use.Circulation. 1996;93(5):1043–1065.
 
 2.Shaffer F, Ginsberg JP.An overview of heart rate variability metrics and norms.Front Public Health. 2017;5:258. doi:10.3389/fpubh.2017.00258.
