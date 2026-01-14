@@ -60,7 +60,6 @@ An AI agent system could:
 
 - Learn by updating individual memory with successful results and logging failure reasons for optimization.
 
-- The agent would augment nurse decision-making, flagging only the most difficult cases for manual human inspection.
 
 ## Expected Outcomes
 
