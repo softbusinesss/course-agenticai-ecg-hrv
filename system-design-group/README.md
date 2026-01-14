@@ -108,7 +108,9 @@ For AI agent architectures, UML helps visualize:
 | Element | Symbol | When to Use |
 |---------|--------|-------------|
 | **Component** | Rectangle + «component» or icon | Always - represents a modular unit |
-| **Data Flow** | Solid arrow (───►) | When showing information flow direction |
+| **Activity** | Solid arrow (───►) | Activity showing information flow direction |
+
+Note: Connectors should be used in a component diagram, but they are too challenging to make using pure text. To keep a simple conceptual illustration this deviation from the specification in UML 2.5.1 is done.
 
 ### Common Stereotypes for AI Agents
 
@@ -170,9 +172,6 @@ External:
 │              │  ECG Data Files (.txt)
 │ File System  │
 └──────────────┘
-
-Legend:
-  ───────>     Dependency (uses/invokes)
 ```
 
 ---
