@@ -11,7 +11,7 @@ A health monitoring system needs to monitor ECG signals from multiple users for 
 
 System receives 30–50 ECG segments per user daily, each 30–60 seconds long.Even with only a few users, there are clear differences in resting heart rate, baseline HRV, and signal noise patterns between individuals.Most segments are normal and usable but are often flagged due to noise or individual variations.Current workflows are inflexible and cannot automatically retry alternative strategies upon failure.
 
-Analysis
+## Analysis
 ### Root Causes
 
 - Ignoring Individual Differences: Applying uniform thresholds leads to high misclassification rates.
