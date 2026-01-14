@@ -9,74 +9,68 @@ A health monitoring system needs to monitor ECG signals from multiple users for 
 
 ## Context/Background
 
-    System receives 30–50 ECG segments per user daily, each 30–60 seconds long.
-
-Even with only a few users, there are clear differences in resting heart rate, baseline HRV, and signal noise patterns between individuals.
-
-Most segments are normal and usable but are often flagged due to noise or individual variations.
-
-Current workflows are inflexible and cannot automatically retry alternative strategies upon failure.
+System receives 30–50 ECG segments per user daily, each 30–60 seconds long.Even with only a few users, there are clear differences in resting heart rate, baseline HRV, and signal noise patterns between individuals.Most segments are normal and usable but are often flagged due to noise or individual variations.Current workflows are inflexible and cannot automatically retry alternative strategies upon failure.
 
 Analysis
 ### Root Causes
 
-    Ignoring Individual Differences: Applying uniform thresholds leads to high misclassification rates.
+- Ignoring Individual Differences: Applying uniform thresholds leads to high misclassification rates.
 
-Fixed Processing Workflow: Analysis cannot adapt to different signal qualities or individual traits.
+- Fixed Processing Workflow: Analysis cannot adapt to different signal qualities or individual traits.
 
-Manual Overload: Technical staff must manually review and filter results, leading to high labor costs.
+- Manual Overload: Technical staff must manually review and filter results, leading to high labor costs.
 
 ### Constraints
 
-    Must handle multiple individuals simultaneously without increasing human burden.
+- Must handle multiple individuals simultaneously without increasing human burden.
 
-Must operate 24/7 without segment-by-segment manual intervention.
+- Must operate 24/7 without segment-by-segment manual intervention.
 
-System must be scalable for more individuals without redesigning the core process.
+- System must be scalable for more individuals without redesigning the core process.
 
 ### Requirements
 
-    Real-time processing of ECG data from multiple sources.
+- Real-time processing of ECG data from multiple sources.
 
-Adaptive filtering and R-peak detection based on personal historical data.
+- Adaptive filtering and R-peak detection based on personal historical data.
 
-Automatic quality judgment to accept or reject results based on physiological credibility.
+- Automatic quality judgment to accept or reject results based on physiological credibility.
 
 ## Proposed Approach (Chat-based)
 
 A technician could:
 
-    Collect basic individual info (sampling rate, expected ranges) and copy-paste ECG data into the chat.
+- Collect basic individual info (sampling rate, expected ranges) and copy-paste ECG data into the chat.
 
-Analyze using the LLM to suggest analysis methods and generate HRV results.
+- Analyze using the LLM to suggest analysis methods and generate HRV results.
 
-Recommend a result for the user to manually judge for credibility.
+- Recommend a result for the user to manually judge for credibility.
 
-Learn by re-inputting user info if the LLM forgets the specific context.
+- Learn by re-inputting user info if the LLM forgets the specific context.
 
 ## Proposed Approach (Agentic)
 
 An AI agent system could:
 
-    Collect ECG signal segments and Person IDs through the Ingestion Module.
+- Collect ECG signal segments and Person IDs through the Ingestion Module.
 
-Analyze by querying historical heart rate baselines and choosing adaptive filtering strategies.
+- Analyze by querying historical heart rate baselines and choosing adaptive filtering strategies.
 
-Recommend HRV metrics (SDNN, RMSSD) only if they pass the internal physiological assessment.
+- Recommend HRV metrics (SDNN, RMSSD) only if they pass the internal physiological assessment.
 
-Learn by updating individual memory with successful results and logging failure reasons for optimization.
+- Learn by updating individual memory with successful results and logging failure reasons for optimization.
 
-The agent would augment nurse decision-making, flagging only the most difficult cases for manual human inspection.
+- The agent would augment nurse decision-making, flagging only the most difficult cases for manual human inspection.
 
 ## Expected Outcomes
 
-    Reduction in manual review time for ECG and HRV data.
+- Reduction in manual review time for ECG and HRV data.
 
-Improved consistency by establishing personalized heart rate baselines for each user.
+- Improved consistency by establishing personalized heart rate baselines for each user.
 
-Automatic filtering of low-quality signals to minimize false anomalies.
+- Automatic filtering of low-quality signals to minimize false anomalies.
 
-Scalable architecture that naturally extends from 1 to many users.
+- Scalable architecture that naturally extends from 1 to many users.
 ## References
 1.Task Force of the European Society of Cardiology and the North American Society of Pacing and Electrophysiology.Heart rate variability: standards of measurement, physiological interpretation and clinical use.Circulation. 1996;93(5):1043–1065.
 
