@@ -12,6 +12,8 @@ This folder contains group data submissions used for training, testing, and demo
 
 ### Folder Structure
 
+Example of what your folder may look like.
+
 ```
 2026-Chen-Lin-Wang/
 ├── README.md              # Data documentation (required)
@@ -40,6 +42,8 @@ Your data README must specify:
 
 | Field | Description |
 |-------|-------------|
+| **Dataset Title** | Clear, descriptive name |
+| **Authors** | Group member names |
 | **Source** | Where the data came from (public dataset, self-collected, synthetic) |
 | **License** | License under which the data can be shared |
 | **Statistics** | Number of subjects, demographics, data length/number of samples, sampling rate |
@@ -52,7 +56,7 @@ Your data README must specify:
 
 ## Grading Criteria
 
-Deliverable scored as passed (1) if handed in with acceptable quality before the end of the course.
+Deliverable scored as passed (1) if handed in with acceptable quality before the end of the course, i.e. fulfilling all requirements in this file.
 
 ---
 
@@ -86,7 +90,7 @@ Deliverable scored as passed (1) if handed in with acceptable quality before the
 ### README.md
 
 ```markdown
-# Data: HRV Analysis Dataset
+# Data: HRV Stress Analysis Dataset
 
 **Group:** 2026-Chen-Lin-Wang
 **Authors:** Chen Wei, Lin MeiLing, Wang XiaoMing
@@ -96,7 +100,7 @@ Deliverable scored as passed (1) if handed in with acceptable quality before the
 
 ### Source
 
-This dataset contains preprocessed HRV features extracted from the SWELL-KW dataset. This is only a preprocessed part of the orginal data.
+This dataset contains preprocessed HRV features and labells extracted from the SWELL-KW dataset. This is only a preprocessed part of the orginal data.
 
 **Original Source:** W. Kraaij, S. Koldijk, & M. Sappelli. (2014). The SWELL Knowledge Work Dataset for Stress and User Modeling Research.
 Available at: http://cs.ru.nl/~skoldijk/SWELL-KW/Dataset.html
@@ -118,6 +122,7 @@ Citations required:
 | Subjects | 25 |
 | Demographics | Mean age 25 ± s.d. 3.25 years; 17 male, 8 female |
 | Data Length | ~3 hours |
+| Sampling Rate | 500 Hz |
 | Total windows | ~5,000 |
 | Features | 6 HRV metrics |
 | Conditions | 3 (neutral, time pressure, interruptions) |
@@ -154,7 +159,7 @@ Citations required:
 
 ### Preprocessing
 
-1. ECG signals bandpass filtered (0.5-40 Hz)
+1. ECG signals bandpass filtered (0.5-40 Hz) with 4th order Butterworth filter
 2. R-peaks detected using Pan-Tompkins algorithm
 3. HRV features computed over 3-minute windows with 50% overlap
 4. Outlier windows removed (RR interval < 300ms or > 2000ms)
