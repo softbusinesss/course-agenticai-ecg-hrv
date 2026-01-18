@@ -37,6 +37,7 @@ This includes but is not limited to:
 student-material-ecg-hrv/
 │
 ├── README.md                      # This file
+├── INSTALL_CLAUDE_CODE_GEMINI_CODEX_CLI.md  # AI CLI installation guide
 ├── Syllabus_....md                # Course syllabus (reference)
 │
 ├── ssh-keys-individual/           # Individual SSH public keys (for server access)
