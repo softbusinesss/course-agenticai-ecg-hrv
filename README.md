@@ -1,8 +1,3 @@
-Here’s a **ready‑to‑copy, professional, real‑world project README** for your **course‑agenticai‑ecg‑hrv** repository — formatted cleanly in Markdown with proper structure and no bullet points, so it renders well on GitHub:
-
----
-
-````markdown
 # AgenticAI ECG & HRV Analysis
 
 A project focused on processing and analyzing ECG (Electrocardiogram) signals to extract heart rate and Heart Rate Variability (HRV) metrics using signal processing and machine learning techniques.
