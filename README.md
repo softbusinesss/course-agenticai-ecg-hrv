@@ -1,92 +1,63 @@
-📘 Agentic AI ECG & HRV Course Repository
+# AgenticAI ECG & HRV Analysis
 
-Agentic AI Course — ECG & HRV Student Submissions
-A curated repository of all student‑submitted materials for the Agentic AI (代理式人工智慧) course focusing on ECG (Electrocardiogram) and HRV (Heart Rate Variability) analysis.
+# A Python-based project for analyzing ECG signals and extracting Heart Rate Variability (HRV) metrics using AI techniques.
 
-This repo contains assignments, reports, code, data, examples, and reflections from individual and group work throughout the course.
+# ---------------------------
+# Overview
+# ---------------------------
+# This project processes ECG recordings to:
+# 1. Detect R-peaks and calculate heart rate
+# 2. Extract HRV features (time-domain and frequency-domain)
+# 3. Apply AI models for classification or anomaly detection
+# 4. Generate summary reports and visualizations
 
-🧠 About This Repository
+# It’s built to be modular so you can swap datasets or models easily.
 
-This repository serves as the central collection of student deliverables for the Agentic AI course held at National Cheng Kung University. Participants apply AI and signal processing techniques to ECG and HRV data, submitting case briefs, code, technical reports, and evaluations as part of their coursework.
+# ---------------------------
+# Folder Structure
+# ---------------------------
+data/                   # Sample ECG datasets (anonymized or synthetic)
+notebooks/              # Jupyter notebooks for exploratory analysis
+src/                    # Python scripts for preprocessing, feature extraction, modeling
+models/                 # Trained AI models or checkpoints
+results/                # Output plots, metrics, and analysis reports
 
-The content is organized into distinct folders for each submission type, group project, and practical exercise completed during the term.
-
-📁 Repository Structure
-├── README.md                                # This file
-├── INSTALL_CLAUDE_CODE_GEMINI_CODEX_CLI.md  # CLI setup instructions
-├── Syllabus_*.md                            # Course syllabus reference
-├── ssh-keys-individual/                     # Individual SSH public keys
-├── case-brief-individual/                   # Case studies (Markdown)
-├── report-individual/                       # Technical reports from each student
-├── reflection-group/                        # Group reflection docs
-├── data-group/                              # Shared data submissions per group
-├── project-code-group/                      # Project source code by teams
-├── tests-group/                             # Test descriptions or markdowns
-└── slides-demonstration-group/              # Group slide decks
-
-🚀 Key Concepts
-🫀 ECG Signal Analysis
-
-Electrocardiograms (ECGs) are electrical recordings of the heart used to extract features like heart rate and beat morphology. Many AI workflows build on ECG preprocessing, feature extraction, and classification methods seen across open‑source projects in the domain.
-
-📈 HRV (Heart Rate Variability)
-
-HRV is a measure of variation in time between successive heartbeats, often derived from ECG R‑peak intervals. HRV gives insights into autonomic nervous system activity and physiological stress.
-
-This repository reflects real coursework aimed at practical signal processing, statistical analysis, and AI‑assisted insights into ECG/HRV data.
-
-📦 Getting Started
-
-⚠️ Add specific commands/requirements here based on what your course materials use (e.g., Python, R, CLI tools, AI models).
-
-Clone the repository:
-
+# ---------------------------
+# Getting Started
+# ---------------------------
+# 1. Clone the repository
 git clone https://github.com/softbusinesss/course-agenticai-ecg-hrv.git
 
-
-Install dependencies (example — Python):
-
+# 2. Install dependencies (example)
 pip install -r requirements.txt
 
+# 3. Run preprocessing
+python src/preprocess.py --input data/ecg_sample.csv --output results/preprocessed.csv
 
-Explore student code in:
+# 4. Extract HRV features
+python src/extract_hrv.py --input results/preprocessed.csv --output results/hrv_features.csv
 
-project-code-group/ (AI/ML signal analysis)
+# 5. Train or evaluate models
+python src/train_model.py --features results/hrv_features.csv --model models/hrv_model.pkl
 
-data-group/ (ECG/HRV datasets)
+# ---------------------------
+# Requirements
+# ---------------------------
+# Python 3.8+
+# Libraries: numpy, pandas, matplotlib, scipy, sklearn, tensorflow/torch (depending on model)
 
-report-individual/ (explanations & results)
+# ---------------------------
+# Results
+# ---------------------------
+# The project produces:
+# - HRV feature tables
+# - Plots of ECG signals and HRV metrics
+# - AI model predictions
+# - Summary reports for analysis
 
-📌 Submission Guidelines
-
-All student materials must follow licensing and privacy guidelines:
-
-Code: Apache License 2.0 or compatible
-
-Documentation & data: CC‑BY‑4.0
-
-No PII or identifiable health data included in submissions
-
-Detailed rules and naming conventions are described in the syllabus and instructor materials.
-
-🧩 Contributing
-
-This repository is maintained as part of course requirements and not intended for external pull requests. For future shared work or community contributions, consider:
-
-Adding datasets with standardized readme & format
-
-Enhancing signal processing notebooks (e.g., interactive visualizations)
-
-Including automated tests for reproducibility
-
-🧭 References & Further Reading
-
-For broader context on ECG/HRV analysis progress in open source:
-
-Explainable AI approaches for ECG deep learning ➤
-
-Heart rate variability analysis pipelines and tutorials ➤
-
-🙏 Acknowledgements
-
-Thanks to all course participants, collaborators, and the Agentic AI teaching staff for contributing high‑quality work and insights throughout this term.
+# ---------------------------
+# Notes
+# ---------------------------
+# - Data is anonymized or synthetic
+# - Can be adapted for real ECG datasets
+# - Designed for research, learning, or prototyping ECG/HRV AI pipelines
